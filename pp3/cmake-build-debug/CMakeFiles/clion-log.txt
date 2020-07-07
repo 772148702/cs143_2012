@@ -1,0 +1,29 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/pp3
+CMake Warning (dev) at CMakeLists.txt:29 (ADD_CUSTOM_COMMAND):
+  Policy CMP0050 is not set: Disallow add_custom_command SOURCE signatures.
+  Run "cmake --help-policy CMP0050" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The SOURCE signatures of add_custom_command are no longer supported.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at CMakeLists.txt:37 (ADD_CUSTOM_COMMAND):
+  Policy CMP0050 is not set: Disallow add_custom_command SOURCE signatures.
+  Run "cmake --help-policy CMP0050" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The SOURCE signatures of add_custom_command are no longer supported.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at CMakeLists.txt:71 (add_custom_command):
+  Policy CMP0040 is not set: The target in the TARGET signature of
+  add_custom_command() must exist and must be defined in the current
+  directory.  Run "cmake --help-policy CMP0040" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  No TARGET 'realese' has been created in this directory.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug

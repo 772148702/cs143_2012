@@ -1,0 +1,2 @@
+/usr/bin/ar qc libext.a  CMakeFiles/ext.dir/y.tab.c.o CMakeFiles/ext.dir/lex.yy.c.o
+/usr/bin/ranlib libext.a

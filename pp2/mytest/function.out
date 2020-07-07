@@ -1,0 +1,73 @@
+
+   Program: 
+  1   FnDecl: 
+         (return type) Type: int
+  1      Identifier: testfuna
+  1      (formals) VarDecl: 
+            Type: int
+  1         Identifier: a
+  1      (formals) VarDecl: 
+            Type: int
+  1         Identifier: b
+         (body) StmtBlock: 
+            SwitchStmt: 
+  2            FieldAccess: 
+  2               Identifier: a
+               Case: 
+  3               IntConstant: 1
+                  StmtBlock: 
+  4                  AssignExpr: 
+  4                     FieldAccess: 
+  4                        Identifier: a
+  4                     Operator: =
+  4                     ArithmeticExpr: 
+  4                        FieldAccess: 
+  4                           Identifier: a
+  4                        Operator: +
+  4                        FieldAccess: 
+  4                           Identifier: b
+  5                  BreakStmt: 
+               Case: 
+  7               IntConstant: 2
+  8               AssignExpr: 
+  8                  FieldAccess: 
+  8                     Identifier: a
+  8                  Operator: =
+  8                  ArithmeticExpr: 
+  8                     FieldAccess: 
+  8                        Identifier: a
+  8                     Operator: -
+  8                     FieldAccess: 
+  8                        Identifier: b
+  9               BreakStmt: 
+ 11         Call: 
+ 11            Identifier: testfunb
+ 11            (actuals) FieldAccess: 
+ 11               Identifier: a
+ 11            (actuals) FieldAccess: 
+ 11               Identifier: b
+ 14   FnDecl: 
+         (return type) Type: int
+ 14      Identifier: testfunb
+ 14      (formals) VarDecl: 
+            Type: int
+ 14         Identifier: a
+ 14      (formals) VarDecl: 
+            Type: int
+ 14         Identifier: b
+         (body) StmtBlock: 
+ 15         ReturnStmt: 
+ 15            ArithmeticExpr: 
+ 15               FieldAccess: 
+ 15                  Identifier: a
+ 15               Operator: +
+ 15               FieldAccess: 
+ 15                  Identifier: b
+ 18   FnDecl: 
+         (return type) Type: int
+ 18      Identifier: main
+         (body) StmtBlock: 
+ 19         Call: 
+ 19            Identifier: testfuna
+ 19            (actuals) IntConstant: 1
+ 19            (actuals) IntConstant: 2

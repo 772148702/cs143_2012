@@ -1,0 +1,1 @@
+/usr/bin/g++    -Wall -g  -Wno-unused -Wno-sign-compare  -g  -rdynamic CMakeFiles/dcc.dir/ast.cc.o CMakeFiles/dcc.dir/ast_decl.cc.o CMakeFiles/dcc.dir/ast_expr.cc.o CMakeFiles/dcc.dir/ast_stmt.cc.o CMakeFiles/dcc.dir/ast_type.cc.o CMakeFiles/dcc.dir/errors.cc.o CMakeFiles/dcc.dir/utility.cc.o CMakeFiles/dcc.dir/main.cc.o  -o dcc -lc -lm -ll libext.a -lc -lm -ll 

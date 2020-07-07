@@ -1,0 +1,5 @@
+/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/dcc.dir
+/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/pl.dir
+/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/ext.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc liby.tab.c.a  CMakeFiles/y.tab.c.dir/lex.yy.c.o
+/usr/bin/ranlib liby.tab.c.a

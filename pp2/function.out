@@ -1,0 +1,43 @@
+
+   Program: 
+  1   FnDecl: 
+         (return type) Type: int
+  1      Identifier: testfuna
+  1      (formals) VarDecl: 
+            Type: int
+  1         Identifier: a
+  1      (formals) VarDecl: 
+            Type: int
+  1         Identifier: b
+         (body) StmtBlock: 
+  2         Call: 
+  2            Identifier: testfunb
+  2            (actuals) FieldAccess: 
+  2               Identifier: a
+  2            (actuals) FieldAccess: 
+  2               Identifier: b
+  5   FnDecl: 
+         (return type) Type: int
+  5      Identifier: testfunb
+  5      (formals) VarDecl: 
+            Type: int
+  5         Identifier: a
+  5      (formals) VarDecl: 
+            Type: int
+  5         Identifier: b
+         (body) StmtBlock: 
+  6         ReturnStmt: 
+  6            ArithmeticExpr: 
+  6               FieldAccess: 
+  6                  Identifier: a
+  6               Operator: +
+  6               FieldAccess: 
+  6                  Identifier: b
+  9   FnDecl: 
+         (return type) Type: int
+  9      Identifier: main
+         (body) StmtBlock: 
+ 10         Call: 
+ 10            Identifier: testfuna
+ 10            (actuals) IntConstant: 1
+ 10            (actuals) IntConstant: 2

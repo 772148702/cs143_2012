@@ -1,0 +1,2 @@
+/usr/bin/ar qc libyparse.a  CMakeFiles/yparse.dir/y.tab.c.o
+/usr/bin/ranlib libyparse.a
