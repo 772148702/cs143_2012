@@ -85,7 +85,7 @@ clean:
 
 # DO NOT DELETE
 
-ast.o: ast.h /usr/include/stdlib.h /usr/include/features.h
+ast.o: include/ast.h /usr/include/stdlib.h /usr/include/features.h
 ast.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
 ast.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
 ast.o: /usr/include/sys/types.h /usr/include/bits/types.h
@@ -99,7 +99,7 @@ ast.o: /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h
 ast.o: /usr/include/wchar.h /usr/include/bits/wchar.h /usr/include/gconv.h
 ast.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
 ast.o: ast_decl.h /usr/include/string.h
-ast_decl.o: ast_decl.h ast.h /usr/include/stdlib.h /usr/include/features.h
+ast_decl.o: ast_decl.h include/ast.h /usr/include/stdlib.h /usr/include/features.h
 ast_decl.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
 ast_decl.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
 ast_decl.o: /usr/include/sys/types.h /usr/include/bits/types.h
@@ -117,7 +117,7 @@ ast_decl.o: ast_type.h ast_stmt.h
 ast_expr.o: /usr/include/string.h /usr/include/features.h
 ast_expr.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
 ast_expr.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h ast_expr.h
-ast_expr.o: ast.h /usr/include/stdlib.h /usr/include/sys/types.h
+ast_expr.o: include/ast.h /usr/include/stdlib.h /usr/include/sys/types.h
 ast_expr.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
 ast_expr.o: /usr/include/time.h /usr/include/endian.h
 ast_expr.o: /usr/include/bits/endian.h /usr/include/sys/select.h
@@ -143,11 +143,11 @@ ast_stmt.o: /usr/include/stdio.h /usr/include/libio.h
 ast_stmt.o: /usr/include/_G_config.h /usr/include/wchar.h
 ast_stmt.o: /usr/include/bits/wchar.h /usr/include/gconv.h
 ast_stmt.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
-ast_stmt.o: ast.h location.h ast_type.h ast_decl.h ast_expr.h
+ast_stmt.o: include/ast.h location.h ast_type.h ast_decl.h ast_expr.h
 ast_type.o: /usr/include/string.h /usr/include/features.h
 ast_type.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
 ast_type.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h ast_type.h
-ast_type.o: ast.h /usr/include/stdlib.h /usr/include/sys/types.h
+ast_type.o: include/ast.h /usr/include/stdlib.h /usr/include/sys/types.h
 ast_type.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
 ast_type.o: /usr/include/time.h /usr/include/endian.h
 ast_type.o: /usr/include/bits/endian.h /usr/include/sys/select.h
@@ -208,7 +208,7 @@ errors.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
 errors.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
 errors.o: /usr/include/bits/wchar.h /usr/include/gconv.h
 errors.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
-errors.o: scanner.h ast_type.h ast.h /usr/include/stdlib.h
+errors.o: scanner.h ast_type.h include/ast.h /usr/include/stdlib.h
 errors.o: /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h
 errors.o: /usr/include/bits/endian.h /usr/include/sys/select.h
 errors.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
@@ -243,4 +243,4 @@ main.o: /usr/include/sys/select.h /usr/include/bits/select.h
 main.o: /usr/include/bits/sigset.h /usr/include/bits/time.h
 main.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
 main.o: /usr/include/alloca.h errors.h location.h parser.h scanner.h list.h
-main.o: ast.h ast_type.h ast_decl.h ast_expr.h ast_stmt.h
+main.o: include/ast.h ast_type.h ast_decl.h ast_expr.h ast_stmt.h
