@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/OneDrive/public_lessons/cs143/pp3
+CMAKE_SOURCE_DIR = /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug
 
 # Utility rule file for pl.
 
@@ -67,6 +67,6 @@ CMakeFiles/pl.dir/clean:
 .PHONY : CMakeFiles/pl.dir/clean
 
 CMakeFiles/pl.dir/depend:
-	cd /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/pp3 /mnt/e/OneDrive/public_lessons/cs143/pp3 /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/pl.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3 /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3 /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles/pl.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pl.dir/depend
 

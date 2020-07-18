@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/OneDrive/public_lessons/cs143/pp3
+CMAKE_SOURCE_DIR = /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dcc.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/dcc.dir/flags.make
 
 CMakeFiles/dcc.dir/ast.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/ast.cc.o: ../ast.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dcc.dir/ast.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/ast.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dcc.dir/ast.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast.cc
 
 CMakeFiles/dcc.dir/ast.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/ast.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/ast.cc > CMakeFiles/dcc.dir/ast.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast.cc > CMakeFiles/dcc.dir/ast.cc.i
 
 CMakeFiles/dcc.dir/ast.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/ast.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/ast.cc -o CMakeFiles/dcc.dir/ast.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast.cc -o CMakeFiles/dcc.dir/ast.cc.s
 
 CMakeFiles/dcc.dir/ast.cc.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/dcc.dir/ast.cc.o.provides.build: CMakeFiles/dcc.dir/ast.cc.o
 
 CMakeFiles/dcc.dir/ast_decl.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/ast_decl.cc.o: ../ast_decl.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dcc.dir/ast_decl.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_decl.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_decl.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dcc.dir/ast_decl.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_decl.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_decl.cc
 
 CMakeFiles/dcc.dir/ast_decl.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/ast_decl.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_decl.cc > CMakeFiles/dcc.dir/ast_decl.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_decl.cc > CMakeFiles/dcc.dir/ast_decl.cc.i
 
 CMakeFiles/dcc.dir/ast_decl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/ast_decl.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_decl.cc -o CMakeFiles/dcc.dir/ast_decl.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_decl.cc -o CMakeFiles/dcc.dir/ast_decl.cc.s
 
 CMakeFiles/dcc.dir/ast_decl.cc.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/dcc.dir/ast_decl.cc.o.provides.build: CMakeFiles/dcc.dir/ast_decl.cc.
 
 CMakeFiles/dcc.dir/ast_expr.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/ast_expr.cc.o: ../ast_expr.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/dcc.dir/ast_expr.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_expr.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_expr.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/dcc.dir/ast_expr.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_expr.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_expr.cc
 
 CMakeFiles/dcc.dir/ast_expr.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/ast_expr.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_expr.cc > CMakeFiles/dcc.dir/ast_expr.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_expr.cc > CMakeFiles/dcc.dir/ast_expr.cc.i
 
 CMakeFiles/dcc.dir/ast_expr.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/ast_expr.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_expr.cc -o CMakeFiles/dcc.dir/ast_expr.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_expr.cc -o CMakeFiles/dcc.dir/ast_expr.cc.s
 
 CMakeFiles/dcc.dir/ast_expr.cc.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/dcc.dir/ast_expr.cc.o.provides.build: CMakeFiles/dcc.dir/ast_expr.cc.
 
 CMakeFiles/dcc.dir/ast_stmt.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/ast_stmt.cc.o: ../ast_stmt.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/dcc.dir/ast_stmt.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_stmt.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_stmt.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/dcc.dir/ast_stmt.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_stmt.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_stmt.cc
 
 CMakeFiles/dcc.dir/ast_stmt.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/ast_stmt.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_stmt.cc > CMakeFiles/dcc.dir/ast_stmt.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_stmt.cc > CMakeFiles/dcc.dir/ast_stmt.cc.i
 
 CMakeFiles/dcc.dir/ast_stmt.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/ast_stmt.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_stmt.cc -o CMakeFiles/dcc.dir/ast_stmt.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_stmt.cc -o CMakeFiles/dcc.dir/ast_stmt.cc.s
 
 CMakeFiles/dcc.dir/ast_stmt.cc.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/dcc.dir/ast_stmt.cc.o.provides.build: CMakeFiles/dcc.dir/ast_stmt.cc.
 
 CMakeFiles/dcc.dir/ast_type.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/ast_type.cc.o: ../ast_type.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/dcc.dir/ast_type.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_type.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_type.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/dcc.dir/ast_type.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/ast_type.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_type.cc
 
 CMakeFiles/dcc.dir/ast_type.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/ast_type.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_type.cc > CMakeFiles/dcc.dir/ast_type.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_type.cc > CMakeFiles/dcc.dir/ast_type.cc.i
 
 CMakeFiles/dcc.dir/ast_type.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/ast_type.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/ast_type.cc -o CMakeFiles/dcc.dir/ast_type.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/ast_type.cc -o CMakeFiles/dcc.dir/ast_type.cc.s
 
 CMakeFiles/dcc.dir/ast_type.cc.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/dcc.dir/ast_type.cc.o.provides.build: CMakeFiles/dcc.dir/ast_type.cc.
 
 CMakeFiles/dcc.dir/errors.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/errors.cc.o: ../errors.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/dcc.dir/errors.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/errors.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/errors.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/dcc.dir/errors.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/errors.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/errors.cc
 
 CMakeFiles/dcc.dir/errors.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/errors.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/errors.cc > CMakeFiles/dcc.dir/errors.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/errors.cc > CMakeFiles/dcc.dir/errors.cc.i
 
 CMakeFiles/dcc.dir/errors.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/errors.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/errors.cc -o CMakeFiles/dcc.dir/errors.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/errors.cc -o CMakeFiles/dcc.dir/errors.cc.s
 
 CMakeFiles/dcc.dir/errors.cc.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/dcc.dir/errors.cc.o.provides.build: CMakeFiles/dcc.dir/errors.cc.o
 
 CMakeFiles/dcc.dir/utility.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/utility.cc.o: ../utility.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/dcc.dir/utility.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/utility.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/utility.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/dcc.dir/utility.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/utility.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/utility.cc
 
 CMakeFiles/dcc.dir/utility.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/utility.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/utility.cc > CMakeFiles/dcc.dir/utility.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/utility.cc > CMakeFiles/dcc.dir/utility.cc.i
 
 CMakeFiles/dcc.dir/utility.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/utility.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/utility.cc -o CMakeFiles/dcc.dir/utility.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/utility.cc -o CMakeFiles/dcc.dir/utility.cc.s
 
 CMakeFiles/dcc.dir/utility.cc.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/dcc.dir/utility.cc.o.provides.build: CMakeFiles/dcc.dir/utility.cc.o
 
 CMakeFiles/dcc.dir/main.cc.o: CMakeFiles/dcc.dir/flags.make
 CMakeFiles/dcc.dir/main.cc.o: ../main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/dcc.dir/main.cc.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/main.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/dcc.dir/main.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dcc.dir/main.cc.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/main.cc
 
 CMakeFiles/dcc.dir/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dcc.dir/main.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/main.cc > CMakeFiles/dcc.dir/main.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/main.cc > CMakeFiles/dcc.dir/main.cc.i
 
 CMakeFiles/dcc.dir/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dcc.dir/main.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/main.cc -o CMakeFiles/dcc.dir/main.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/main.cc -o CMakeFiles/dcc.dir/main.cc.s
 
 CMakeFiles/dcc.dir/main.cc.o.requires:
 
@@ -274,7 +274,7 @@ dcc: CMakeFiles/dcc.dir/main.cc.o
 dcc: CMakeFiles/dcc.dir/build.make
 dcc: libext.a
 dcc: CMakeFiles/dcc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable dcc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable dcc"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dcc.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -298,6 +298,6 @@ CMakeFiles/dcc.dir/clean:
 .PHONY : CMakeFiles/dcc.dir/clean
 
 CMakeFiles/dcc.dir/depend:
-	cd /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/pp3 /mnt/e/OneDrive/public_lessons/cs143/pp3 /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/dcc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3 /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3 /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles/dcc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dcc.dir/depend
 

@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -g  -Wno-unused -Wno-sign-compare  -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/e/OneDrive/public_lessons/cs143/pp3/include 
+CXX_INCLUDES = -I/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/include 
 

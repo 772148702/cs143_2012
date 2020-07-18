@@ -20,10 +20,10 @@
  * set up links in both directions. The parent link is typically not used 
  * during parsing, but is more important in later phases.
  *
- * Code generation: For pp4 you are adding "Emit" behavior to the ast
- * node classes. Your code generator should do an postorder walk on the
- * parse tree, and when visiting each node, emitting the necessary 
- * instructions for that construct.
+ * Semantic analysis: For pp3 you are adding "Check" behavior to the ast
+ * node classes. Your semantic analyzer should do an inorder walk on the
+ * parse tree, and when visiting each node, verify the particular
+ * semantic rules that apply to that construct.
 
  */
 
@@ -34,20 +34,21 @@
 #include "location.h"
 #include <iostream>
 using namespace std;
-
+class Scope;
 class Node  {
   protected:
     yyltype *location;
     Node *parent;
-
+    Scope *scope;
   public:
     Node(yyltype loc);
     Node();
     virtual ~Node() {}
-    
+    virtual Scope *GetScope()        { return scope; }
     yyltype *GetLocation()   { return location; }
     void SetParent(Node *p)  { parent = p; }
     Node *GetParent()        { return parent; }
+    Node* GetNode()             {return this;}
 };
    
 
@@ -57,6 +58,9 @@ class Identifier : public Node
     char *name;
     
   public:
+    char* GetName() {return name;}
+    char* Name() {return name;}
+    bool operator==(const Identifier &rhs);
     Identifier(yyltype loc, const char *name);
     friend ostream& operator<<(ostream& out, Identifier *id) { return out << id->name; }
 };

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "y.tab.c"
   "y.tab.h"
   "CMakeFiles/ext.dir/y.tab.c.o"
   "CMakeFiles/ext.dir/lex.yy.c.o"

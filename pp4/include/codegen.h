@@ -27,6 +27,8 @@ class CodeGenerator {
   private:
     List<Instruction*> *code;
 
+    int localOffset;
+    bool mainDefined;
   public:
            // Here are some class constants to remind you of the offsets
            // used for globals, locals, and parameters. You will be
@@ -40,6 +42,8 @@ class CodeGenerator {
            // Conveniently, all vars are 4 bytes in size for code generation
     static const int OffsetToFirstLocal = -8,
                      OffsetToFirstParam = 4,
+                     OffsetToFirstField = 4,
+                     OffsetToFirstMethod= 0,
                      OffsetToFirstGlobal = 0;
     static const int VarSize = 4;
 
@@ -53,7 +57,7 @@ class CodeGenerator {
          // Creates and returns a Location for a new uniquely named
          // temp variable. Does not generate any Tac instructions
     Location *GenTempVar();
-
+    Location *GenLocalVar(const char* name,int size);
          // Generates Tac instructions to load a constant value. Creates
          // a new temp var to hold the result. The constant 
          // value is passed as an integer, it can be 0 for integer zero,

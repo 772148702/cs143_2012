@@ -5,13 +5,14 @@
  * language (add, call, New, etc.) there is a corresponding
  * node class for that construct. 
  *
- * pp4: You will need to extend the Expr classes to implement 
- * code generation for expressions.
+ * pp3: You will need to extend the Expr classes to implement 
+ * semantic analysis for rules pertaining to expressions.
  */
 
 
 #ifndef _H_ast_expr
 #define _H_ast_expr
+
 
 #include "ast.h"
 #include "ast_stmt.h"
@@ -19,13 +20,29 @@
 
 class NamedType; // for new
 class Type; // for NewArray
-
+class FnDecl;
+class ClassDecl;
 
 class Expr : public Stmt 
 {
   public:
     Expr(yyltype loc) : Stmt(loc) {}
     Expr() : Stmt() {}
+
+    virtual Type* GetType()=0;
+    virtual void BuildScope() override {};
+    void Check() override {};
+    virtual Location *Emit(CodeGenerator *cg) {  };
+    virtual int GetMemBytes() = 0;
+
+protected:
+
+        ClassDecl* GetClassDecl();
+        Location* GetThisLoc();
+        Decl* GetFieldDecl(Identifier *field,Type *base);
+
+        Decl* GetFieldDecl(Identifier *field, Node *n);
+        Decl* GetFieldDecl(Identifier *field, Expr *e);
 };
 
 /* This node type is used for those places where an expression is optional.
@@ -34,6 +51,10 @@ class Expr : public Stmt
 class EmptyExpr : public Expr
 {
   public:
+    Type* GetType() override  {return nullptr;}
+    void  Check() override {}
+    Location *Emit(CodeGenerator *cg) override {return nullptr;}
+    int GetMemBytes() override {return 0;}
 };
 
 class IntConstant : public Expr 
@@ -43,6 +64,11 @@ class IntConstant : public Expr
   
   public:
     IntConstant(yyltype loc, int val);
+
+    Type* GetType() override ;
+    void Check() override {}
+    Location *Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
 class DoubleConstant : public Expr 
@@ -52,6 +78,11 @@ class DoubleConstant : public Expr
     
   public:
     DoubleConstant(yyltype loc, double val);
+
+    Type* GetType() override ;
+    void Check() override {}
+    Location *Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
 class BoolConstant : public Expr 
@@ -61,6 +92,11 @@ class BoolConstant : public Expr
     
   public:
     BoolConstant(yyltype loc, bool val);
+
+    Type* GetType() override ;
+    void Check() override {}
+    Location *Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
 class StringConstant : public Expr 
@@ -70,12 +106,20 @@ class StringConstant : public Expr
     
   public:
     StringConstant(yyltype loc, const char *val);
+    Type* GetType() override ;
+    void Check() {}
+    Location *Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
 class NullConstant: public Expr 
 {
   public: 
     NullConstant(yyltype loc) : Expr(loc) {}
+    Type* GetType() override ;
+    void Check() override  {}
+    Location *Emit(CodeGenerator *cg) override;
+    int GetMemBytes() override ;
 };
 
 class Operator : public Node 
@@ -86,7 +130,9 @@ class Operator : public Node
   public:
     Operator(yyltype loc, const char *tok);
     friend ostream& operator<<(ostream& out, Operator *o) { return out << o->tokenString; }
- };
+
+    const char *GetTokenString() { return tokenString; }
+};
  
 class CompoundExpr : public Expr
 {
@@ -97,6 +143,13 @@ class CompoundExpr : public Expr
   public:
     CompoundExpr(Expr *lhs, Operator *op, Expr *rhs); // for binary
     CompoundExpr(Operator *op, Expr *rhs);             // for unary
+    void BuildScope() override;
+
+    void Check() override;
+
+    Type* GetType() override = 0;
+    Location* Emit(CodeGenerator *cg) override = 0;
+    int GetMemBytes() override = 0;
 };
 
 class ArithmeticExpr : public CompoundExpr 
@@ -104,12 +157,37 @@ class ArithmeticExpr : public CompoundExpr
   public:
     ArithmeticExpr(Expr *lhs, Operator *op, Expr *rhs) : CompoundExpr(lhs,op,rhs) {}
     ArithmeticExpr(Operator *op, Expr *rhs) : CompoundExpr(op,rhs) {}
+
+    Type* GetType() override;
+    void Check() override;
+
+    Location* Emit(CodeGenerator *cg) override;
+    int GetMemBytes() override;
+
+private:
+    Location* EmitUnary(CodeGenerator *cg);
+    int GetMemBytesUnary();
+
+    Location* EmitBinary(CodeGenerator *cg);
+    int GetMemBytesBinary();
 };
 
 class RelationalExpr : public CompoundExpr 
 {
   public:
     RelationalExpr(Expr *lhs, Operator *op, Expr *rhs) : CompoundExpr(lhs,op,rhs) {}
+
+    Type* GetType() override ;
+    void Check() override ;
+    Location* Emit(CodeGenerator *cg) override;
+    int GetMemBytes()  override;
+
+  private:
+    Location* EmitLess(CodeGenerator *cg, Expr *l, Expr *r);
+    int GetMemBytesLess(Expr *l, Expr *r);
+
+    Location* EmitLessEqual(CodeGenerator *cg, Expr *l, Expr *r);
+    int GetMemBytesLessEqual(Expr *l, Expr *r);
 };
 
 class EqualityExpr : public CompoundExpr 
@@ -117,6 +195,18 @@ class EqualityExpr : public CompoundExpr
   public:
     EqualityExpr(Expr *lhs, Operator *op, Expr *rhs) : CompoundExpr(lhs,op,rhs) {}
     const char *GetPrintNameForNode() { return "EqualityExpr"; }
+
+    Type* GetType() override;
+    void Check() override;
+    Location* Emit(CodeGenerator *cg) override;
+    int GetMemBytes() override ;
+
+   private:
+    Location* EmitEqual(CodeGenerator *cg);
+    int GetMemBytesEqual();
+
+    Location* EmitNotEqual(CodeGenerator *cg);
+    int GetMemBytesNotEqual();
 };
 
 class LogicalExpr : public CompoundExpr 
@@ -125,6 +215,21 @@ class LogicalExpr : public CompoundExpr
     LogicalExpr(Expr *lhs, Operator *op, Expr *rhs) : CompoundExpr(lhs,op,rhs) {}
     LogicalExpr(Operator *op, Expr *rhs) : CompoundExpr(op,rhs) {}
     const char *GetPrintNameForNode() { return "LogicalExpr"; }
+
+    Type* GetType() override;
+    void Check() override;
+    Location* Emit(CodeGenerator *cg);
+    int GetMemBytes();
+
+  private:
+    Location* EmitAnd(CodeGenerator *cg);
+    int GetMemBytesAnd();
+
+    Location* EmitOr(CodeGenerator *cg);
+    int GetMemBytesOr();
+
+    Location* EmitNot(CodeGenerator *cg);
+    int GetMemBytesNot();
 };
 
 class AssignExpr : public CompoundExpr 
@@ -132,18 +237,38 @@ class AssignExpr : public CompoundExpr
   public:
     AssignExpr(Expr *lhs, Operator *op, Expr *rhs) : CompoundExpr(lhs,op,rhs) {}
     const char *GetPrintNameForNode() { return "AssignExpr"; }
+
+    Type* GetType() override;
+    void Check() override ;
+    Location* Emit(CodeGenerator *cg) override;
+    int GetMemBytes() override;
 };
 
 class LValue : public Expr 
 {
   public:
     LValue(yyltype loc) : Expr(loc) {}
+
+    Type* GetType() override = 0;
+    Location* Emit(CodeGenerator *cg) override = 0;
+    int GetMemBytes() override = 0;
+
+    virtual Location* EmitStore(CodeGenerator *cg, Location *val) = 0;
+    virtual int GetMemBytesStore() = 0;
 };
 
 class This : public Expr 
 {
   public:
     This(yyltype loc) : Expr(loc) {}
+
+    Type* GetType() override ;
+    void Check() override;
+    Location* Emit(CodeGenerator *cg) override;
+    int GetMemBytes() override ;
+
+    void BuildScope() override;
+
 };
 
 class ArrayAccess : public LValue 
@@ -153,6 +278,24 @@ class ArrayAccess : public LValue
     
   public:
     ArrayAccess(yyltype loc, Expr *base, Expr *subscript);
+
+    Type* GetType() override ;
+    void BuildScope() override ;
+    void Check() override ;
+
+    Location* Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
+
+    Location* EmitStore(CodeGenerator *cg, Location *val) override ;
+    int GetMemBytesStore() override ;
+
+private:
+    Location* EmitAddr(CodeGenerator *cg);
+    int GetMemBytesAddr();
+
+    Location* EmitRuntimeSubscriptCheck(CodeGenerator *cg, Location *siz,
+                                        Location *sub);
+    int GetMemBytesRuntimeSubscriptCheck();
 };
 
 /* Note that field access is used both for qualified names
@@ -168,6 +311,27 @@ class FieldAccess : public LValue
     
   public:
     FieldAccess(Expr *base, Identifier *field); //ok to pass NULL base
+
+    Identifier* GetIdentifier() {return field;}
+    Type* GetType() override;
+    void BuildScope() override;
+    void Check() override;
+    Location* Emit(CodeGenerator *cg) override;
+    int GetMemBytes() override;
+
+    Location* EmitStore(CodeGenerator *cg, Location *val) override ;
+    int GetMemBytesStore() override;
+
+private:
+    VarDecl* GetDecl();
+
+    Location* EmitMemLoc(CodeGenerator *cg, VarDecl *fieldDecl);
+    int GetMemBytesMemLoc(VarDecl *fieldDecl);
+
+    Location* EmitMemLocStore(CodeGenerator *cg, Location *val,
+                              VarDecl *fieldDecl);
+    int GetMemBytesMemLocStore(VarDecl *fieldDecl);
+
 };
 
 /* Like field access, call is used both for qualified base.field()
@@ -182,7 +346,30 @@ class Call : public Expr
     List<Expr*> *actuals;
     
   public:
+
     Call(yyltype loc, Expr *base, Identifier *field, List<Expr*> *args);
+
+    Type* GetType() override ;
+    void BuildScope() override ;
+    void Check() override;
+    Location* Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
+    int GetMemBytesActuals();
+private:
+    void CheckActuals(Decl *d);
+    Location* EmitLabel(CodeGenerator *cg);
+
+    int GetMemBytesLabel();
+
+    Location* EmitArrayLength(CodeGenerator *cg);
+    int GetMemBytesArrayLength();
+
+    Location* EmitDynamicDispatch(CodeGenerator *cg, Location *b);
+    int GetMemBytesDynamicDispatch();
+
+    FnDecl* GetDecl();
+    bool IsArrayLengthCall();
+    bool IsMethodCall();
 };
 
 class NewExpr : public Expr
@@ -192,6 +379,11 @@ class NewExpr : public Expr
     
   public:
     NewExpr(yyltype loc, NamedType *clsType);
+    Type* GetType() override ;
+    void Check() override ;
+
+    Location* Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
 class NewArrayExpr : public Expr
@@ -202,18 +394,40 @@ class NewArrayExpr : public Expr
     
   public:
     NewArrayExpr(yyltype loc, Expr *sizeExpr, Type *elemType);
+    Type* GetType() override ;
+    void BuildScope() override ;
+    void Check() override ;
+    Location* Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
+
+private:
+    Location* EmitRuntimeSizeCheck(CodeGenerator *cg, Location *siz);
+    int GetMemBytesRuntimeSizeCheck();
+
 };
 
 class ReadIntegerExpr : public Expr
 {
   public:
     ReadIntegerExpr(yyltype loc) : Expr(loc) {}
+
+    void BuildScope() override {};
+
+    Type* GetType() override ;
+    void Check() override {}
+    Location* Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
 class ReadLineExpr : public Expr
 {
   public:
     ReadLineExpr(yyltype loc) : Expr (loc) {}
+    void BuildScope() override {};
+    Type* GetType () override ;
+    void Check()  override {}
+    Location* Emit(CodeGenerator *cg) override ;
+    int GetMemBytes() override ;
 };
 
     

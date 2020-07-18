@@ -31,5 +31,5 @@ CMakeFiles/ext.dir/y.tab.c.o: ../include/parser.h
 CMakeFiles/ext.dir/y.tab.c.o: ../include/scanner.h
 CMakeFiles/ext.dir/y.tab.c.o: ../include/utility.h
 CMakeFiles/ext.dir/y.tab.c.o: ../include/y.tab.h
-CMakeFiles/ext.dir/y.tab.c.o: ../y.tab.c
+CMakeFiles/ext.dir/y.tab.c.o: y.tab.c
 

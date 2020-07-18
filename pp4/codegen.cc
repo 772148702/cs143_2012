@@ -13,6 +13,17 @@
 CodeGenerator::CodeGenerator()
 {
   code = new List<Instruction*>();
+  localOffset = OffsetToFirstLocal;
+  mainDefined = false;
+
+    code->Append(new _Alloc);
+    code->Append(new _ReadLine);
+    code->Append(new _ReadInteger);
+    code->Append(new _StringEqual);
+    code->Append(new _PrintInt);
+    code->Append(new _PrintString);
+    code->Append(new _PrintBool);
+    code->Append(new _Halt);
 }
 
 char *CodeGenerator::NewLabel()
@@ -34,6 +45,8 @@ Location *CodeGenerator::GenTempVar()
      in stack frame for use as temporary. Until you
      do that, the assert below will always fail to remind
      you this needs to be implemented  */
+  result = new Location(fpRelative,localOffset,temp);
+  localOffset -=VarSize;
   Assert(result != NULL);
   return result;
 }
@@ -199,6 +212,12 @@ void CodeGenerator::DoFinalCodeGen()
      for (int i = 0; i < code->NumElements(); i++)
 	 code->Nth(i)->Emit(&mips);
   }
+}
+
+Location *CodeGenerator::GenLocalVar(const char* name,int size) {
+    Location *result = new Location(fpRelative, localOffset, name);
+    localOffset -= size;
+    return result;
 }
 
 

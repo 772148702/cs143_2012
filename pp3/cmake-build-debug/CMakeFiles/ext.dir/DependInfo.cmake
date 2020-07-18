@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/e/OneDrive/public_lessons/cs143/pp3/lex.yy.c" "/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/ext.dir/lex.yy.c.o"
-  "/mnt/e/OneDrive/public_lessons/cs143/pp3/y.tab.c" "/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/ext.dir/y.tab.c.o"
+  "/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/lex.yy.c" "/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles/ext.dir/lex.yy.c.o"
+  "/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/y.tab.c" "/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles/ext.dir/y.tab.c.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

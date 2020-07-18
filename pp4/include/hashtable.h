@@ -106,7 +106,7 @@ class Iterator {
 };
 
 
-#include "hashtable.cc" // icky, but allows implicit template instantiation
+#include "../hashtable.cc" // icky, but allows implicit template instantiation
 
 #endif
 

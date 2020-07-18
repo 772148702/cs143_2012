@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/e/OneDrive/public_lessons/cs143/pp3
+CMAKE_SOURCE_DIR = /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ext.dir/depend.make
@@ -57,22 +57,26 @@ include CMakeFiles/ext.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ext.dir/flags.make
 
+y.tab.c: ../parser.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating y.tab.c"
+	bison -dvty /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/parser.y
+
 y.tab.h: ../parser.y
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating y.tab.h"
-	bison -dvty /mnt/e/OneDrive/public_lessons/cs143/pp3/parser.y
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating y.tab.h"
+	bison -dvty /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/parser.y
 
 CMakeFiles/ext.dir/y.tab.c.o: CMakeFiles/ext.dir/flags.make
-CMakeFiles/ext.dir/y.tab.c.o: ../y.tab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ext.dir/y.tab.c.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ext.dir/y.tab.c.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/y.tab.c
+CMakeFiles/ext.dir/y.tab.c.o: y.tab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ext.dir/y.tab.c.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ext.dir/y.tab.c.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/y.tab.c
 
 CMakeFiles/ext.dir/y.tab.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ext.dir/y.tab.c.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/y.tab.c > CMakeFiles/ext.dir/y.tab.c.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/y.tab.c > CMakeFiles/ext.dir/y.tab.c.i
 
 CMakeFiles/ext.dir/y.tab.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ext.dir/y.tab.c.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/y.tab.c -o CMakeFiles/ext.dir/y.tab.c.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/y.tab.c -o CMakeFiles/ext.dir/y.tab.c.s
 
 CMakeFiles/ext.dir/y.tab.c.o.requires:
 
@@ -87,16 +91,16 @@ CMakeFiles/ext.dir/y.tab.c.o.provides.build: CMakeFiles/ext.dir/y.tab.c.o
 
 CMakeFiles/ext.dir/lex.yy.c.o: CMakeFiles/ext.dir/flags.make
 CMakeFiles/ext.dir/lex.yy.c.o: ../lex.yy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ext.dir/lex.yy.c.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ext.dir/lex.yy.c.o -c /mnt/e/OneDrive/public_lessons/cs143/pp3/lex.yy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ext.dir/lex.yy.c.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ext.dir/lex.yy.c.o -c /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/lex.yy.c
 
 CMakeFiles/ext.dir/lex.yy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ext.dir/lex.yy.c.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/pp3/lex.yy.c > CMakeFiles/ext.dir/lex.yy.c.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/lex.yy.c > CMakeFiles/ext.dir/lex.yy.c.i
 
 CMakeFiles/ext.dir/lex.yy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ext.dir/lex.yy.c.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/pp3/lex.yy.c -o CMakeFiles/ext.dir/lex.yy.c.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/lex.yy.c -o CMakeFiles/ext.dir/lex.yy.c.s
 
 CMakeFiles/ext.dir/lex.yy.c.o.requires:
 
@@ -121,7 +125,7 @@ libext.a: CMakeFiles/ext.dir/y.tab.c.o
 libext.a: CMakeFiles/ext.dir/lex.yy.c.o
 libext.a: CMakeFiles/ext.dir/build.make
 libext.a: CMakeFiles/ext.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libext.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libext.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ext.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ext.dir/link.txt --verbose=$(VERBOSE)
 
@@ -139,7 +143,8 @@ CMakeFiles/ext.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/ext.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/ext.dir/clean
 
+CMakeFiles/ext.dir/depend: y.tab.c
 CMakeFiles/ext.dir/depend: y.tab.h
-	cd /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/pp3 /mnt/e/OneDrive/public_lessons/cs143/pp3 /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/pp3/cmake-build-debug/CMakeFiles/ext.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3 /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3 /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug /mnt/e/OneDrive/public_lessons/cs143/cs143pp/pp3/cmake-build-debug/CMakeFiles/ext.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ext.dir/depend
 

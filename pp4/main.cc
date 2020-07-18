@@ -19,8 +19,11 @@
  * InitParser() is used to set up the parser. The call to yyparse() will
  * attempt to parse a complete program from the input. 
  */
+
+
 int main(int argc, char *argv[])
 {
+    //freopen("./samples/bad1.decaf","r",stdin);
     ParseCommandLine(argc, argv);
     InitScanner();
     InitParser();

@@ -34,13 +34,13 @@ ADD_CUSTOM_COMMAND(
         ARGS -d ${PROJECT_SOURCE_DIR}/scanner.l
         OUTPUT lex.yy.c
 )
+ADD_CUSTOM_COMMAND(
+        SOURCE ${PROJECT_SOURCE_DIR}/parser.y
+        COMMAND ${BISON_EXECUTABLE}
+        ARGS -dvty ${PROJECT_SOURCE_DIR}/parser.y
+        OUTPUT y.tab.c  y.tab.h)
 
 configure_file(${CMAKE_CURRENT_BINARY_DIR}/y.tab.h ${PROJECT_SOURCE_DIR}/include/y.tab.h  COPYONLY)
-add_custom_command(
-        OUTPUT y.tab.h
-        COMMAND ${CMAKE_COMMAND} -E copy
-        y.tab.h
-        ${PROJECT_SOURCE_DIR}/y.tab.h)
 
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
@@ -70,7 +70,7 @@ add_executable(
 
 target_link_libraries(dcc ext)
 
-configure_file(${PROJECT_BINARY_DIR}/dcc ${PROJECT_SOURCE_DIR}/dcc  COPYONLY)
+configure_file(${CMAKE_CURRENT_BINARY_DIR}/dcc ${PROJECT_SOURCE_DIR}/dcc  COPYONLY)
 
 #add_custom_command(
 #        TARGET dcc POST_BUILD
