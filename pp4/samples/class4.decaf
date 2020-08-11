@@ -2,7 +2,7 @@
 class B { int z; int GetZ() { return z;}}
 
 void binky(B x) {
-    Print("x = ", x.GetZ() , "\n");
+    Print("x = 123", x.GetZ() , "\n");
 }
 
 class X extends B {

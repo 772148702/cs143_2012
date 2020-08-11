@@ -40,7 +40,7 @@ protected:
         ClassDecl* GetClassDecl();
         Location* GetThisLoc();
         Decl* GetFieldDecl(Identifier *field,Type *base);
-
+        Decl* GetFieldDeclInOneNode(Identifier *f, Type *b);
         Decl* GetFieldDecl(Identifier *field, Node *n);
         Decl* GetFieldDecl(Identifier *field, Expr *e);
 };

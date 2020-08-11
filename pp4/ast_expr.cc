@@ -82,6 +82,33 @@ ClassDecl *Expr::GetClassDecl() {
     return nullptr;
 }
 
+Decl *Expr::GetFieldDeclInOneNode(Identifier *f, Type *b) {
+    NamedType *t = dynamic_cast<NamedType*>(b);
+
+    while (t != NULL) {
+        Decl *d = Program::gScope->table->Lookup(t->Name());
+        ClassDecl *c = dynamic_cast<ClassDecl*>(d);
+        InterfaceDecl *i = dynamic_cast<InterfaceDecl*>(d);
+
+        Decl *fieldDecl;
+        if (c != NULL) {
+            if ((fieldDecl = c->GetScope()->table->Lookup(f->GetName())) != NULL)
+                return fieldDecl;
+            else
+                t = c->GetExtends();
+        } else if (i != NULL) {
+            if ((fieldDecl = i->GetScope()->table->Lookup(f->GetName()))!= NULL)
+                return fieldDecl;
+            else
+                t = NULL;
+        } else {
+            t = NULL;
+        }
+    }
+
+    return nullptr;
+}
+
 
 IntConstant::IntConstant(yyltype loc, int val) : Expr(loc) {
     value = val;
@@ -277,7 +304,7 @@ Location *ArithmeticExpr::EmitBinary(CodeGenerator *cg) {
 }
 
 int ArithmeticExpr::GetMemBytesBinary() {
-   return right->GetMemBytes()+left->GetMemBytes()+CodeGenerator::VarSize;
+   return right->GetMemBytes()+left->GetMemBytes()+2*CodeGenerator::VarSize;
 }
 
 Type* RelationalExpr::GetType() {
@@ -346,7 +373,7 @@ Location *RelationalExpr::EmitLess(CodeGenerator *cg, Expr *l, Expr *r) {
 }
 
 int RelationalExpr::GetMemBytesLess(Expr *l, Expr *r) {
-    return l->GetMemBytes() + r->GetMemBytes() + CodeGenerator::VarSize;
+    return l->GetMemBytes() + r->GetMemBytes() + 2*CodeGenerator::VarSize;
 }
 
 Location *RelationalExpr::EmitLessEqual(CodeGenerator *cg, Expr *l, Expr *r) {
@@ -421,7 +448,7 @@ Location *EqualityExpr::EmitEqual(CodeGenerator *cg) {
 }
 
 int EqualityExpr::GetMemBytesEqual() {
-    return left->GetMemBytes()+right->GetMemBytes()+CodeGenerator::VarSize;
+    return left->GetMemBytes()+right->GetMemBytes()+2*CodeGenerator::VarSize;
 }
 
 Location *EqualityExpr::EmitNotEqual(CodeGenerator *cg) {
@@ -619,7 +646,7 @@ Location *This::Emit(CodeGenerator *cg) {
 }
 
 int This::GetMemBytes() {
-    return 0;
+    return CodeGenerator::VarSize;
 }
 
 void This::BuildScope() {
@@ -958,7 +985,7 @@ void Call::CheckActuals(Decl *d)
     for(int i=0;i<expectNumVars;++i) {
         Type* d1 = fnDecl->GetFormals()->Nth(i)->GetType();
         Type* d2 = actuals->Nth(i)->GetType();
-        if(!d1->IsEquivalentTo(d2)) {
+        if(!d2->IsEquivalentTo(d1)) {
             ReportError::ArgMismatch(actuals->Nth(i),i,d2,d1);
         }
     }
@@ -1082,7 +1109,7 @@ bool Call::IsMethodCall() {
     if (c == NULL)
         return false;
 
-    FnDecl *f = dynamic_cast<FnDecl*>(GetFieldDecl(field, c->GetType()));
+    FnDecl *f = dynamic_cast<FnDecl*>(GetFieldDeclInOneNode(field, c->GetType()));
     if (f == NULL)
         return false;
 
@@ -1154,7 +1181,7 @@ void NewArrayExpr::Check() {
 
 Location* NewExpr::Emit(CodeGenerator *cg) {
     const char *name = cType->GetName();
-
+    
     Decl *d = Program::gScope->table->Lookup(name);
     Assert(d != NULL);
 

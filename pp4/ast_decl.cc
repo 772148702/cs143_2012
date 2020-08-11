@@ -115,7 +115,7 @@ void ClassDecl::CheckExtendedMembers(NamedType *extType) {
     if (extType == NULL)
         return;
 
-    Decl *lookup = scope->GetParent()->table->Lookup(extType->Name());
+    Decl *lookup = this->GetParent()->GetScope()->table->Lookup(extType->Name());
     ClassDecl *extDecl = dynamic_cast<ClassDecl*>(lookup);
     if (extDecl == NULL)
         return;
@@ -422,7 +422,7 @@ Location *FnDecl::Emit(CodeGenerator *cg) {
 
     if(body!= nullptr) {
         cg->GenLabel(GetLabel());
-        cg->GenBeginFunc()->SetFrameSize(body->GetMemBytes()*4);
+        cg->GenBeginFunc()->SetFrameSize(body->GetMemBytes()+1024*CodeGenerator::VarSize);
         body->Emit(cg);
         cg->GenEndFunc();
     }

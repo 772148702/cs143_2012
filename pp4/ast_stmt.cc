@@ -159,6 +159,7 @@ void ConditionalStmt::Check() {
 void LoopStmt::BuildScope() {
 
     ConditionalStmt::BuildScope();
+    scope->SetLoopStmt((this));
 }
 
 ForStmt::ForStmt(Expr *i, Expr *t, Expr *s, Stmt *b): LoopStmt(t, b) { 
@@ -319,7 +320,7 @@ void ReturnStmt::Check() {
     }
     Type *expected = d->GetReturnType();
     Type *given = expr->GetType();
-
+    if(given== nullptr && strcmp(expected->GetName(),"void")==0) return;
     if(!given->IsEquivalentTo(expected)) {
         ReportError::ReturnMismatch(this,given,expected);
     }
